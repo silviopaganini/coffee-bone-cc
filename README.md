@@ -10,6 +10,20 @@ Fork from Coffee-Bone for Creative Coding.
 4. `$ node install.js [APP NAMESPACE]` *optional - just namespaces app in all coffee files*
 5. `$ gulp`
 
+### General FE app structure notes
+
+* `InteractiveView.coffee` - change this page with your CC code
+* `Router.coffee` - capture / modify URL hashChange events
+* `Nav.coffee` - list all available site routes, handle / delegate URL hashChange events
+* `AppView.coffee` - Core view, all UI bound here. Anything with a deeplink in `Wrapper`, any modal-only content in `ModalManager`
+* `Wrapper.coffee`
+    * mapping for all site deeplinked views
+    * each view may be an `AbstractViewPage` or `AbstractViewModal`
+    * handle management of deeplinked pages / modals based on view 'type' and history state
+    * trigger sub-route event changing
+* `AbstractViewPage` / `AbstractViewModal` - URL based pages, built in methods for page transitions
+* `_ModalManager.coffee` - custom modal management (non URL-based popups)
+
 ### Gulp tasks
 
 * `$ gulp` - *development mode*
@@ -35,19 +49,6 @@ Fork from Coffee-Bone for Creative Coding.
 
 * Others:
     * *Check `/gulp/tasks` - each file corresponds to an individual gulp task*
-
-### General FE app structure notes
-
-* `Router.coffee` - capture / modify URL hashChange events
-* `Nav.coffee` - list all available site routes, handle / delegate URL hashChange events
-* `AppView.coffee` - Core view, all UI bound here. Anything with a deeplink in `Wrapper`, any modal-only content in `ModalManager`
-* `Wrapper.coffee`
-    * mapping for all site deeplinked views
-    * each view may be an `AbstractViewPage` or `AbstractViewModal`
-    * handle management of deeplinked pages / modals based on view 'type' and history state
-    * trigger sub-route event changing
-* `AbstractViewPage` / `AbstractViewModal` - URL based pages, built in methods for page transitions
-* `_ModalManager.coffee` - custom modal management (non URL-based popups)
 
 ### Included JS libs
 
