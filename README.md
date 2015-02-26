@@ -8,9 +8,7 @@ Fork from Coffee-Bone for Creative Coding.
 2. `$ cd [DIR NAME]`
 3. `$ npm install` *you might need to run it twice, gulp-sass is currently buggy*
 4. `$ node install.js [APP NAMESPACE]` *optional - just namespaces app in all coffee files*
-5. `$ ./server/run`
-* (new tab)
-6. `$ gulp`
+5. `$ gulp`
 
 ### Gulp tasks
 
@@ -33,8 +31,7 @@ Fork from Coffee-Bone for Creative Coding.
     * Minify XML templates
     * Concatenate vendor JS
     * Uglify JS (vendor + main application JS)
-    * Custom modernizr build based on refs used through app *-- TO DO*
-    * Iconizr *-- TO DO*
+    * Custom modernizr build based on refs used through app
 
 * Others:
     * *Check `/gulp/tasks` - each file corresponds to an individual gulp task*
